@@ -1,1 +1,16 @@
+name: 自托管运行器示例
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 执行脚本
+        run: echo "运行在自托管运行器上"
